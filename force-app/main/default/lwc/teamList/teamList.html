@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-box" style="margin-left: 5%; margin-right: 5%;">
+        <b>Team : </b> <lightning-combobox
+        name="team"
+        placeholder="Select Team"
+        options={options}
+        value={selectedTeamId}
+        onchange={handleOnChange}
+        variant = "label-hidden"  >
+    </lightning-combobox> 
+    <template if:true={isMemberFound}>
+        <template for:each={lstData} for:item="teamMemberObj"> 
+            <div key={teamMemberObj.name} class="slds-border_bottom">
+                <div class="slds-grid slds-gutters slds-wrap" style="margin-left: 1%;">
+                    <div class="slds-col slds-size_1-of-3">
+                        <span>Name : </span>
+                    </div>
+                    <div class="slds-col slds-size_2-of-3">
+                        <span>{teamMemberObj.name}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <span>Team : </span>
+                    </div>
+                    <div class="slds-col slds-size_2-of-3">
+                        <span>{selectedTeamName}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <span>Skills : </span>
+                    </div>
+                    <div class="slds-col slds-size_2-of-3">
+                        <span>{teamMemberObj.skills}</span>
+                    </div>
+                </div>
+            </div>
+         </template>
+    </template>
+    <template if:true={isMemberNotFound}>
+        No team member was found.
+    </template>
+    </div>
+</template>

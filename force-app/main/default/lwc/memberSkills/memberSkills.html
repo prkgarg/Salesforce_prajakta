@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-box" style="margin-left: 5%; margin-right: 5%;">
+        <div class="slds-grid slds-gutters slds-wrap" >
+            <div class="slds-col slds-size_1-of-2">
+            <span>Name:</span>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+            <span><lightning-input variant = "label-hidden"  type="text" value={teamMemberName} name="memberName" placeholder="Enter Member Name" onchange={handleOnChange}></lightning-input></lightning-input></span>
+            </div>
+            <br/>
+            <br/>
+            <div class="slds-col slds-size_1-of-2">
+            <span>Team:</span>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+            <span>
+                <lightning-combobox
+                    name="team"
+                    placeholder="Select Team"
+                    options={options}
+                    value={selectedTeamId}
+                    onchange={handleOnChange}
+                    variant = "label-hidden"  >
+                </lightning-combobox></span>
+            </div>
+            <br/>
+            <br/>
+            <div class="slds-col slds-size_1-of-2">
+            <span>Skills:</span>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <span><lightning-input variant = "label-hidden" type="text" value={teamMemberSkills} name="skillsInput" placeholder="Enter Skills" onchange={handleOnChange}></lightning-input></lightning-input></span>
+            </div>
+            
+        </div>
+        <br/><br/>
+        <center>
+            <lightning-button variant="success" label="Submit" title="Submit" onclick={handleClick}></lightning-button>
+        </center>
+        
+    </div>
+</template>
