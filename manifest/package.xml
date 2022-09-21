@@ -10,5 +10,15 @@
 		<members>teamsApp</members>
 		<name>LightningComponentBundle</name>
 	</types>
+	<types>
+		<members>Team_Member__c.Skills__c</members>
+		<members>Team_Member__c.Team__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Team_Member__c</members>
+		<members>Team__c</members>
+		<name>CustomObject</name>
+	</types>
     <version>55.0</version>
 </Package>
